@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrar">
+
+    <TextView
+        android:id="@+id/txt_label_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:text="Registrar"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/container_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@id/txt_label_registro"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:textSize="15sp"
+            android:hint="Ingrese su nombre completo"
+            android:background="@drawable/background_field"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="E-mail"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:textSize="15sp"
+            android:hint="Ingrese su correo electrónico"
+            android:background="@drawable/background_field"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Teléfono"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:textSize="15sp"
+            android:hint="Ingrese su número telefónico"
+            android:background="@drawable/background_field"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background_btn_accept"
+            android:text="Enviar"
+            android:textColor="@color/white"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_btn_cancel"
+            android:text="Cancelar"/>
+    </LinearLayout>
+
+</RelativeLayout>
