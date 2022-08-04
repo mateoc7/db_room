@@ -19,13 +19,9 @@ public class MainActivity extends AppCompatActivity {
         btn_agg = findViewById(R.id.btn_agg);
         btn_gestionar = findViewById(R.id.btn_gestionar);
 
-        btn_agg.setOnClickListener(view -> {
-            runIntent(Registrar.class);
-        });
+        btn_agg.setOnClickListener(view -> runIntent(Registrar.class));
 
-        btn_gestionar.setOnClickListener(view -> {
-            runIntent(Gestionar.class);
-        });
+        btn_gestionar.setOnClickListener(view -> runIntent(Gestionar.class));
 
     }
 
