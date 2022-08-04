@@ -1,17 +1,40 @@
 package com.demo.db_room.Modelo;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+
+@Entity(tableName = "users")
 public class Usuario implements Serializable {
 
-    private String nombre;
-    private String mail;
-    private String tel;
+    @PrimaryKey
+    public int id;
 
-    public Usuario(String nombre, String mail, String tel) {
+    @ColumnInfo(name = "name")
+    public String nombre;
+
+    @ColumnInfo(name = "email")
+    public String mail;
+
+    @ColumnInfo(name = "phone")
+    public String tel;
+
+    public Usuario(int id, String nombre, String mail, String tel) {
+        this.id = id;
         this.nombre = nombre;
         this.mail = mail;
         this.tel = tel;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
