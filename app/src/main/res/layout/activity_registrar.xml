@@ -10,7 +10,7 @@
         android:id="@+id/txt_label_registro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Registrar"
         android:textSize="25sp"
@@ -21,7 +21,7 @@
         android:id="@+id/container_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_below="@id/txt_label_registro"
@@ -39,6 +39,9 @@
             android:layout_marginTop="5dp"
             android:paddingStart="10dp"
             android:textSize="15sp"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
             android:hint="Ingrese su nombre completo"
             android:background="@drawable/background_field"/>
         <TextView
@@ -54,6 +57,9 @@
             android:layout_marginTop="5dp"
             android:paddingStart="10dp"
             android:textSize="15sp"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
             android:hint="Ingrese su correo electrónico"
             android:background="@drawable/background_field"/>
         <TextView
@@ -69,8 +75,12 @@
             android:layout_marginTop="5dp"
             android:paddingStart="10dp"
             android:textSize="15sp"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
             android:hint="Ingrese su número telefónico"
-            android:background="@drawable/background_field"/>
+            android:background="@drawable/background_field"
+            android:inputType="phone"/>
 
         <Button
             android:layout_width="match_parent"

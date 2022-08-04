@@ -9,9 +9,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:gravity="center"
-        android:text="Base de Datos local con Room"
+        android:text="Base de Datos Local con Room"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:textStyle="bold"/>
@@ -21,19 +23,24 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/btn_agg"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginEnd="5dp"
-            android:text="Registrar"/>
+            android:background="@drawable/background_btn_accept"
+            android:text="Registrar"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btn_gestionar"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="5dp"
-            android:text="Gestionar"/>
+            android:background="@drawable/background_btn_accept"
+            android:text="Gestionar"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </RelativeLayout>
