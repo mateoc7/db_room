@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity(tableName = "users")
 public class Usuario implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int id;
 
     @ColumnInfo(name = "name")
@@ -22,8 +22,7 @@ public class Usuario implements Serializable {
     @ColumnInfo(name = "phone")
     public String tel;
 
-    public Usuario(int id, String nombre, String mail, String tel) {
-        this.id = id;
+    public Usuario(String nombre, String mail, String tel) {
         this.nombre = nombre;
         this.mail = mail;
         this.tel = tel;

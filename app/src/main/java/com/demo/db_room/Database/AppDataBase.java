@@ -1,4 +1,4 @@
-package com.demo.db_room;
+package com.demo.db_room.Database;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

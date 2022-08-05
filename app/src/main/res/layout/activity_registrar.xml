@@ -34,6 +34,7 @@
             android:textSize="16sp"
             android:textColor="@color/black"/>
         <EditText
+            android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
@@ -52,6 +53,7 @@
             android:textSize="16sp"
             android:textColor="@color/black"/>
         <EditText
+            android:id="@+id/input_mail"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
@@ -70,6 +72,7 @@
             android:textSize="16sp"
             android:textColor="@color/black"/>
         <EditText
+            android:id="@+id/input_phone"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
@@ -83,6 +86,7 @@
             android:inputType="phone"/>
 
         <Button
+            android:id="@+id/btn_send"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -90,6 +94,7 @@
             android:text="Enviar"
             android:textColor="@color/white"/>
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
