@@ -45,16 +45,14 @@ public class Gestionar extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        for (Usuario u: usuarios) {
-            System.out.println("TAG /:" + u.nombre);
-        }
+        InitAdapter();
 
     }
 
     private void InitAdapter() {
-        /*UserAdapter adapter = new UserAdapter(this, ref);
+        UserAdapter adapter = new UserAdapter(this, usuarios);
         recycler_users.setAdapter(adapter);
-        recycler_users.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));*/
+        recycler_users.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
     }
 
     private void Init() {

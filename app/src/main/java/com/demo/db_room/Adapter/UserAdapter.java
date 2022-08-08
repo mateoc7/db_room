@@ -34,7 +34,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        //holder.txt_id.setText(usuarioList.get(position).getId());
+        holder.txt_id.setText(String.valueOf(usuarioList.get(position).getId()));
         holder.txt_name.setText(usuarioList.get(position).getNombre());
         holder.txt_mail.setText(usuarioList.get(position).getMail());
     }
