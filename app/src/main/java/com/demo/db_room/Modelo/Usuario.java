@@ -13,13 +13,13 @@ public class Usuario implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    @ColumnInfo(name = "name")
+    @ColumnInfo(name = "nombre")
     public String nombre;
 
-    @ColumnInfo(name = "email")
+    @ColumnInfo(name = "correo_electronico")
     public String mail;
 
-    @ColumnInfo(name = "phone")
+    @ColumnInfo(name = "telefono")
     public String tel;
 
     public Usuario(String nombre, String mail, String tel) {

@@ -30,7 +30,7 @@ public interface UserDao {
     void delete(Usuario usuario);
 
     //Pasar parametros simples a una consulta (búsqueda)
-    @Query("SELECT * FROM users WHERE name = :ref")
+    @Query("SELECT * FROM users WHERE nombre = :ref")
     Usuario[] loadUsersSameName(String ref);
 
 }
