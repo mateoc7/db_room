@@ -16,14 +16,18 @@ public class Usuario implements Serializable {
     @ColumnInfo(name = "nombre")
     public String nombre;
 
+    @ColumnInfo(name = "edad")
+    public int edad;
+
     @ColumnInfo(name = "correo_electronico")
     public String mail;
 
     @ColumnInfo(name = "telefono")
     public String tel;
 
-    public Usuario(String nombre, String mail, String tel) {
+    public Usuario(String nombre, int edad, String mail, String tel) {
         this.nombre = nombre;
+        this.edad = edad;
         this.mail = mail;
         this.tel = tel;
     }

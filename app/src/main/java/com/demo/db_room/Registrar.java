@@ -15,7 +15,7 @@ import com.demo.db_room.Modelo.Usuario;
 
 public class Registrar extends AppCompatActivity {
 
-    EditText input_name, input_mail, input_phone;
+    EditText input_name, input_mail, input_phone, input_age;
     Button btn_send, btn_cancel;
 
     UserDao userDao;
@@ -31,7 +31,13 @@ public class Registrar extends AppCompatActivity {
         btn_send.setOnClickListener(v -> {
             if (validateFields()) {
                 Thread thread = new Thread(() -> {
-                    agregarUsuario(input_name.getText().toString(), input_mail.getText().toString(), input_phone.getText().toString());
+                    agregarUsuario(
+                            input_name.getText().toString(),
+                            input_mail.getText().toString(),
+                            input_phone.getText().toString(),
+                            Integer.parseInt(input_age.getText().toString())
+                    );
+
                     Log.i("TAG->Registrar->Size/:", String.valueOf(userDao.getAll().size()));
                 });
                 thread.start();
@@ -47,6 +53,7 @@ public class Registrar extends AppCompatActivity {
         input_name = findViewById(R.id.input_name);
         input_mail = findViewById(R.id.input_mail);
         input_phone = findViewById(R.id.input_phone);
+        input_age = findViewById(R.id.input_age);
         btn_send = findViewById(R.id.btn_send);
         btn_cancel = findViewById(R.id.btn_cancel);
     }
@@ -64,8 +71,8 @@ public class Registrar extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void agregarUsuario(String nombre, String correo, String tel) {
-        Usuario usuario = new Usuario(nombre, correo, tel);
+    private void agregarUsuario(String nombre, String correo, String tel, int edad) {
+        Usuario usuario = new Usuario(nombre, edad, correo, tel);
         userDao.insertAll(usuario);
     }
 }
