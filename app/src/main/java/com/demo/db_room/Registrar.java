@@ -8,9 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
-import com.demo.db_room.Database.AppDataBase;
+import com.demo.db_room.Database.AgenteRoom;
 import com.demo.db_room.Interface.UserDao;
 import com.demo.db_room.Modelo.Usuario;
 
@@ -20,7 +19,6 @@ public class Registrar extends AppCompatActivity {
     Button btn_send, btn_cancel;
 
     UserDao userDao;
-    AppDataBase room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +26,7 @@ public class Registrar extends AppCompatActivity {
         setContentView(R.layout.activity_registrar);
         Init();
 
-        room = Room
-                .databaseBuilder(this, AppDataBase.class, "users")
-                .build();
-
-        userDao = room.userDao();
+        userDao = AgenteRoom.getRoom(this);
 
         btn_send.setOnClickListener(v -> {
             if (validateFields()) {

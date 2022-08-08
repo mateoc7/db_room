@@ -1,15 +1,13 @@
 package com.demo.db_room;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
-import android.os.Bundle;
-import android.util.Log;
 
 import com.demo.db_room.Adapter.UserAdapter;
-import com.demo.db_room.Database.AppDataBase;
+import com.demo.db_room.Database.AgenteRoom;
 import com.demo.db_room.Interface.UserDao;
 import com.demo.db_room.Modelo.Usuario;
 
@@ -22,7 +20,6 @@ public class Gestionar extends AppCompatActivity {
     List<Usuario> usuarios;
 
     UserDao userDao;
-    AppDataBase room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +27,7 @@ public class Gestionar extends AppCompatActivity {
         setContentView(R.layout.activity_gestionar);
         Init();
 
-        room = Room
-                .databaseBuilder(this, AppDataBase.class, "users")
-                .build();
-
-        userDao = room.userDao();
+        userDao = AgenteRoom.getRoom(this);
 
         Thread thread = new Thread(() -> usuarios = userDao.getAll());
         thread.start();
