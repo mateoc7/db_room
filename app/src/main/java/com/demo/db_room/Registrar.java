@@ -37,11 +37,10 @@ public class Registrar extends AppCompatActivity {
         btn_send.setOnClickListener(v -> {
             if (validateFields()) {
                 Thread thread = new Thread(() -> {
-                    agregarUsuario();
-                    Log.i("TAG", String.valueOf(userDao.getAll().size()));
+                    agregarUsuario(input_name.getText().toString(), input_mail.getText().toString(), input_phone.getText().toString());
+                    Log.i("TAG->Registrar->Size/:", String.valueOf(userDao.getAll().size()));
                 });
                 thread.start();
-                clearFields();
                 returnClass();
                 Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
             } else {
@@ -71,18 +70,8 @@ public class Registrar extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void clearFields() {
-        input_name.setText("");
-        input_mail.setText("");
-        input_phone.setText("");
-    }
-
-    private void agregarUsuario() {
-        Usuario usuario = new Usuario(
-                input_name.getText().toString(),
-                input_mail.getText().toString(),
-                input_phone.getText().toString()
-        );
+    private void agregarUsuario(String nombre, String correo, String tel) {
+        Usuario usuario = new Usuario(nombre, correo, tel);
         userDao.insertAll(usuario);
     }
 }
