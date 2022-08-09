@@ -10,11 +10,13 @@
         android:id="@+id/txt_label_registro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="left"
         android:text="Registrar"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -62,6 +64,7 @@
             android:maxLines="1"
             android:lines="1"
             android:singleLine="true"
+            android:inputType="number"
             android:hint="Edad"
             android:background="@drawable/background_field"/>
         <TextView
