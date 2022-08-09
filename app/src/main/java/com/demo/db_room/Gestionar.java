@@ -3,7 +3,6 @@ package com.demo.db_room;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,7 +64,7 @@ public class Gestionar extends AppCompatActivity implements Listener {
     public synchronized void editUser(int id, int idObj) {
         Log.i("id Edit/", String.valueOf(id));
         usuario = usuarios.get(idObj);
-        dialog = Utility.centerDialog(this, R.layout.resource_edit_user, usuario);
+        dialog = Utility.dialogEditUser(this, R.layout.resource_edit_user, usuario);
 
         EditText input_new_name = dialog.findViewById(R.id.input_new_name);
         EditText input_new_age = dialog.findViewById(R.id.input_new_age);
@@ -82,12 +81,27 @@ public class Gestionar extends AppCompatActivity implements Listener {
             new Thread(() -> userDao.updateUsers(usuario)).start();
 
             dialog.dismiss();
+
+            adapter.notifyDataSetChanged();
         });
         dialog.findViewById(R.id.btn_cancel_act).setOnClickListener(v -> dialog.dismiss());
     }
 
     @Override
-    public synchronized void deleteUser(int id) {
+    public synchronized void deleteUser(int id, int idObj) {
         Log.i("id Delete/", String.valueOf(id));
+        usuario = usuarios.get(idObj);
+        dialog = Utility.centeSmallDialog(this, R.layout.resource_delete_user, usuario);
+
+        dialog.findViewById(R.id.btn_aceptar_del).setOnClickListener(v -> {
+
+            new Thread(() -> userDao.delete(usuario)).start();
+
+            dialog.dismiss();
+
+            adapter.notifyDataSetChanged();
+        });
+
+        dialog.findViewById(R.id.btn_cancel_del).setOnClickListener(v -> dialog.dismiss());
     }
 }

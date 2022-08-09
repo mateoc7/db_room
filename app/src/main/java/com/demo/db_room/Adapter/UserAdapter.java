@@ -77,7 +77,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             if (view.getId() == btn_edit.getId()) {
                 listener.editUser(id, getAdapterPosition());
             } else {
-                listener.deleteUser(id);
+                listener.deleteUser(id, getAdapterPosition());
             }
         }
     }

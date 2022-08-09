@@ -5,12 +5,15 @@
       <map>
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/drawable/background_btn_accept.xml" value="0.3553846153846154" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/drawable/background_btn_cancel.xml" value="0.3553846153846154" />
+        <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/drawable/background_btn_trust.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/drawable/background_edit_user.xml" value="0.3553846153846154" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/drawable/background_field.xml" value="0.3553846153846154" />
+        <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/drawable/ic_baseline_warning.xml" value="0.2490740740740741" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/layout/activity_gestionar.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/layout/activity_main.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/layout/activity_registrar.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/layout/card_info_user.xml" value="0.67" />
+        <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/layout/resource_delete_usert.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/WPOSS/Documents/GitHub/db_room/app/src/main/res/layout/resource_edit_user.xml" value="0.34479166666666666" />
       </map>
     </option>
