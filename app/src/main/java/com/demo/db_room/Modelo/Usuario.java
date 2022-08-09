@@ -63,4 +63,12 @@ public class Usuario implements Serializable {
     public void setTel(String tel) {
         this.tel = tel;
     }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
 }
