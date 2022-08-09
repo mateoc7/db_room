@@ -33,4 +33,8 @@ public interface UserDao {
     @Query("SELECT * FROM users WHERE nombre = :ref")
     Usuario[] loadUsersSameName(String ref);
 
+    //Retorna el objeto que se quiere eliminar
+    @Query("SELECT * FROM users WHERE id = :ref")
+    Usuario searchUser(int ref);
+
 }
