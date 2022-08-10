@@ -24,6 +24,11 @@ public class Gestionar extends AppCompatActivity implements Listener {
     Dialog dialog;
 
     List<Usuario> usuarios;
+
+    private final int idBtnUsers = 2131230819;
+    private final int idBtnUsersAdult = 2131231222;
+    private final int idBtnUsersYoung = 2131231223;
+
     Usuario usuario;
     UserAdapter adapter;
 
@@ -35,9 +40,20 @@ public class Gestionar extends AppCompatActivity implements Listener {
         setContentView(R.layout.activity_gestionar);
         Init();
 
+        Bundle bundle = getIntent().getExtras();
+        int btn = bundle.getInt("ref");
+
         userDao = AgenteRoom.getRoom(this);
 
-        Thread thread = new Thread(() -> usuarios = userDao.getAll());
+        Thread thread = new Thread(() -> {
+            if (btn == idBtnUsers) {
+                usuarios = userDao.getAll();
+            } else if (btn == idBtnUsersAdult){
+                usuarios = userDao.userAdult();
+            } else {
+                usuarios = userDao.userYoung();
+            }
+        });
         thread.start();
 
         try {
@@ -46,12 +62,12 @@ public class Gestionar extends AppCompatActivity implements Listener {
             e.printStackTrace();
         }
 
-        InitAdapter();
+        InitAdapter(usuarios);
 
     }
 
-    private void InitAdapter() {
-        adapter = new UserAdapter(this, usuarios, this);
+    private void InitAdapter(List<Usuario> ref) {
+        adapter = new UserAdapter(this, ref, this);
         recycler_users.setAdapter(adapter);
         recycler_users.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
     }
