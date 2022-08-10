@@ -99,6 +99,7 @@ public class Gestionar extends AppCompatActivity implements Listener {
 
             dialog.dismiss();
 
+            usuarios.remove(idObj);
             adapter.notifyDataSetChanged();
         });
 
