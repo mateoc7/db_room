@@ -13,12 +13,17 @@ import com.demo.db_room.Database.AgenteRoom;
 import com.demo.db_room.Interface.UserDao;
 import com.demo.db_room.Modelo.Usuario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Registrar extends AppCompatActivity {
 
     EditText input_name, input_mail, input_phone, input_age;
     Button btn_send, btn_cancel;
 
     UserDao userDao;
+
+    String[] apodos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,8 @@ public class Registrar extends AppCompatActivity {
                             input_name.getText().toString(),
                             input_mail.getText().toString(),
                             input_phone.getText().toString(),
-                            Integer.parseInt(input_age.getText().toString())
+                            Integer.parseInt(input_age.getText().toString()),
+                            apodos
                     );
 
                     Log.i("TAG->Registrar->Size/:", String.valueOf(userDao.getAll().size()));
@@ -56,6 +62,7 @@ public class Registrar extends AppCompatActivity {
         input_age = findViewById(R.id.input_age);
         btn_send = findViewById(R.id.btn_send);
         btn_cancel = findViewById(R.id.btn_cancel);
+        apodos = new String[] {"Juancho", "Mono", "Pipe"};
     }
 
     private boolean validateFields() {
@@ -71,8 +78,8 @@ public class Registrar extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void agregarUsuario(String nombre, String correo, String tel, int edad) {
-        Usuario usuario = new Usuario(nombre, edad, correo, tel);
+    private void agregarUsuario(String nombre, String correo, String tel, int edad, String[] apodos) {
+        Usuario usuario = new Usuario(nombre, edad, correo, tel, apodos);
         userDao.insertAll(usuario);
     }
 }

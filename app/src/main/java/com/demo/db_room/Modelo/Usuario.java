@@ -3,8 +3,11 @@ package com.demo.db_room.Modelo;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity(tableName = "users")
@@ -25,11 +28,16 @@ public class Usuario implements Serializable {
     @ColumnInfo(name = "telefono")
     public String tel;
 
-    public Usuario(String nombre, int edad, String mail, String tel) {
+    @ColumnInfo (name = "apodos")
+    @TypeConverters(Converter.class)
+    public String[] apodos;
+
+    public Usuario(String nombre, int edad, String mail, String tel, String[] apodos) {
         this.nombre = nombre;
         this.edad = edad;
         this.mail = mail;
         this.tel = tel;
+        this.apodos = apodos;
     }
 
     public int getId() {

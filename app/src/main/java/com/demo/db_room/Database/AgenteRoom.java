@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.demo.db_room.Interface.UserDao;
+import com.demo.db_room.Modelo.Converter;
 
 public class AgenteRoom {
 
